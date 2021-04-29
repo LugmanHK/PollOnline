@@ -1,0 +1,26 @@
+<h1 class="header">Sign In</h1>
+<% if(typeof errors != 'undefined'){ %>
+  <% errors.forEach(function(error) { %>
+    <%= error.msg %>
+  <% }); %>
+<% } %>
+<form action="/users/login" method="POST" class="registerForm">
+  <div class="formGroup">
+    <label for="email">Email</label>
+    <input type="email"
+    id="email"
+    name="email"
+    placeholder="Enter Email"
+    value="<%= typeof email != 'undefined' ? email : '' %>">
+  </div>
+  <div class="formGroup">
+    <label for="password">Password</label>
+    <input type="password"
+    id="password"
+    name="password"
+    class="formItem"
+    placeholder="Password" 
+    value="<%= typeof password != 'undefined' ? password : '' %>">
+  </div>
+  <button type="submit" class="submit-btn" >Sign In</button>
+</form>
